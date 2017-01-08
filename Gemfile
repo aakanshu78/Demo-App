@@ -3,6 +3,7 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.8'
+gem 'rake', '< 11.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
