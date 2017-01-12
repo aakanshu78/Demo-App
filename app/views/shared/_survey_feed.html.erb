@@ -1,0 +1,6 @@
+<% if @survey_items.present? %>
+    <ol class="microposts">
+      <%= render partial: 'shared/survey_item', collection: @survey_items %>
+  </ol>
+  <% will_paginate @survey_items %>
+<% end %>

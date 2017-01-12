@@ -1,0 +1,12 @@
+<div id="profile">
+  <%= link_to gravatar_for(current_user, size: 52), current_user %>
+  <h1>
+      <%= current_user.name %>
+  </h1>
+  <span>
+    <%= link_to "view profile", current_user %>
+  </span>
+  <span>
+    <%= link_to "#{current_user.surveys.count} surveys", survey_results_path %>
+  </span>
+</div>

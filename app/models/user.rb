@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_many :surveys, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
   
@@ -28,6 +29,10 @@ class User < ActiveRecord::Base
 
    def feed
     Micropost.from_users_followed_by(self)
+  end
+
+  def questions
+    Survey.from_followed_users(self)
   end
 
   def following?(other_user)

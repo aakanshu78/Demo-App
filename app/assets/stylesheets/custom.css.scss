@@ -36,6 +36,10 @@ textarea {
     }
 }
 
+label {
+    margin-left: 10px;
+}
+
 
 /* typography */
 
@@ -212,6 +216,10 @@ input {
     li {
         padding: 10px 0;
         border-top: 1px solid #e8e8e8;
+        line-height: 25px;
+        .options {
+            padding-left: 7%;
+        }
     }
 }
 
@@ -265,4 +273,8 @@ aside {
     .gravatar {
         margin: 1px 1px;
     }
+}
+
+#survey_question {
+    height: 50px;
 }

@@ -4,6 +4,7 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_surveys
   end
 end
 
@@ -39,4 +40,20 @@ def make_relationships
   followers      = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
+end
+
+def make_surveys
+  users = User.all(limit: 4)
+  5.times do
+    question = Faker::Lorem.sentence(6)
+    option_a = Faker::Lorem.sentence(3)
+    option_b = Faker::Lorem.sentence(3)
+    option_c = Faker::Lorem.sentence(3)
+    option_d = Faker::Lorem.sentence(3)
+    users.each do |user| 
+      user.surveys.create!(question: question, option_a: option_a,
+                          option_b: option_b, option_c: option_c,
+                          option_d: option_d, user_id: user.id)
+    end
+  end
 end

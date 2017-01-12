@@ -1,0 +1,20 @@
+<% provide(:title , 'Survey') %>
+<div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/survey_page_user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section id="survey_form">
+        <%= render 'shared/survey_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+        <h1> Survey List</h1>
+        <div id="survey">
+            <%= render 'shared/survey_feed' %>
+        </div>
+    </div>
+</div>

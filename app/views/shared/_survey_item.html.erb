@@ -1,0 +1,39 @@
+<li id="<%= survey_item.id %>">
+  <%= link_to gravatar_for(survey_item.user), survey_item.user %>
+    <span class="user">
+      <%= link_to survey_item.user.name, survey_item.user %>
+    </span>
+    
+    <%= form_for(survey_item, html: { method: :patch}, remote: true) do |f| %>
+      <span class="content">
+        <b>Q)&nbsp;<%= survey_item.question %> </b>
+      </span>
+      
+      <span class="span8 options">
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.hidden_field :survey_id, :value => survey_item.id %>
+        
+        <% if answered(survey_item) %>
+          <%= f.check_box :option_a, {:id => "option_a#{survey_item.id}", :style => "float:left;"}, true, false %>
+          <%= f.label :option_a, "#{survey_item.option_a}".html_safe, {:for => "option_a#{survey_item.id}", :style => "float:left"} %> <br/>
+          
+          <%= f.check_box :option_b, {:id => "option_b#{survey_item.id}", :style => "float:left;"}, true, false %>
+          <%= f.label :option_b, "#{survey_item.option_b}".html_safe, {:for => "option_b#{survey_item.id}", :style => "float:left"} %> <br/>
+
+          <%= f.check_box :option_c, {:id => "option_c#{survey_item.id}", :style => "float:left;"}, true, false %>
+          <%= f.label :option_c, "#{survey_item.option_c}".html_safe, {:for => "option_c#{survey_item.id}", :style => "float:left"} %> <br/>
+
+          <%= f.check_box :option_d, {:id => "option_d#{survey_item.id}", :style => "float:left;"}, true, false %>
+          <%= f.label :option_d, "#{survey_item.option_d}".html_safe, {:for => "option_d#{survey_item.id}", :style => "float:left"} %> <br/>
+          
+          <%= f.submit "Submit!", class: "btn btn-primary" %>
+
+        <% else %>
+          <span> You have already taken this survey </span>
+        <% end %>
+      </span>
+      <span class="timestamp">
+        Posted <%= time_ago_in_words(survey_item.created_at) %> ago.
+      </span>
+    <% end %>
+</li>

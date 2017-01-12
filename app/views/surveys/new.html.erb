@@ -1,0 +1,32 @@
+<% provide(:title, 'New Survey') %>
+
+<h1>New Survey</h1>
+<span>
+This section should display all the survey questions which a user can answer.
+ It should have following features: <br/>
+1) It should use ajax call for fetching survey questions <br/>
+2) Questions should be single choice <br/>
+3) 4 options and all are radio buttons <br/>
+4) Questions should be display of only those users whome current_user is following<br/>
+5) change new from get to post <br/>
+6) Check for success msg when a new survey question is created <br/>
+7) Make a page to display result of each survey question <br/>
+</span>
+<br/><br/>
+<span>
+<b>Things to do:</b><br/>
+1) Create a new survey thing first<br/>
+&nbsp&nbsp (DONE)- Create a model with columns-> question:text, 4#options:string(option_a), 4#option_count:integer(option_a_count, default= 0), user_id:integer (id of current_user)<br/>
+&nbsp&nbsp&nbsp(Done) - Bind relationship between user and survery <br/>
+&nbsp&nbsp&nbsp&nbsp<b>(ie survey belongs_to :user and user has_many :survey)</b><br/>
+&nbsp&nbsp&nbsp(Done) - Use Faker and generate some questions in db to write queries<br/>
+&nbsp&nbsp&nbsp - Write query to fetch data => first get list of following users for current user and that list as user_id for survey questions<br/>
+&nbsp&nbsp b) Create a form for creating surey form and attach it to index page<br/>
+&nbsp&nbsp(DONE) c) Use Faker to generate some questions for each user (say upto 4 user)<br/>
+&nbsp&nbsp d) Wrap up this shit<br/>
+2) Now work on Feed thing
+&nbsp&nbsp a) Update the no. of survey section and near to that give a link to analyse the user asked question<br/>
+&nbsp&nbsp b) Fetch all the feed for the users whom the current user is following
+&nbsp&nbsp ) display them 
+
+</span>

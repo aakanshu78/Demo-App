@@ -1,0 +1,21 @@
+<%= form_for(@survey, :url => { :action => :create }, remote: true) do |f| %>
+    
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.label :question, "Question:", :style => "float:left" %>
+    <%= f.text_area :question, placeholder: "Enter Your Qestion Here", :style => "float:left" %>
+    
+    <%= f.label :option_a, "Option A ->", :style => "float:left" %><br/>
+    <%= f.text_field :option_a, :style => "float:left" %>
+
+    <%= f.label :option_b, "Option B ->", :style => "float:left" %><br/>
+    <%= f.text_field :option_b, :style => "float:left" %>
+
+    <%= f.label :option_c, "Option C ->", :style => "float:left" %><br/>
+    <%= f.text_field :option_c, :style => "float:left" %>
+
+    <%= f.label :option_d, "Option D ->", :style => "float:left" %>
+    <%= f.text_field :option_d, :style => "float:left" %> <br/>
+<br/>
+    <%= f.submit "Submit!", class: "btn btn-primary", :style => "float:left" %>
+<% end %>

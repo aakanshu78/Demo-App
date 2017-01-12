@@ -1,0 +1,49 @@
+<% if @user_surveys.present? %>
+    <ol class="micropost">
+        <% @user_surveys.each do |user_survey| %>
+            <li id="<%= user_survey.id %>" class="stats">
+                <div class="stat_section">
+                    <b>Q)&nbsp;<%= user_survey.question %> </b>
+                    <table class="table table-bordered table-stripped">
+                        <thead>
+                            <tr> 
+                                <th>OPTIONS</th>
+                                <th>COUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><%= user_survey.option_a%></td>
+                                <td><%= user_survey.option_a_count%></td>
+                            </tr>
+                            <tr>
+                                <td><%= user_survey.option_b%></td>
+                                <td><%= user_survey.option_b_count%></td>
+                            </tr>
+                            <tr>
+                                <td><%= user_survey.option_c%></td>
+                                <td><%= user_survey.option_c_count%></td>
+                            </tr>
+                            <tr>
+                                <td><%= user_survey.option_d%></td>
+                                <td><%= user_survey.option_d_count%></td>
+                            </tr>
+                            <tr>
+                                <td>TOTAL #USERS SUBMITTED SURVEY </td>
+                                <td><%= user_survey.answer_count%></td>
+                            </tr>
+                        <tbody>
+                    </table>
+                    <div class="btn btn-primary" onclick="chart(<%=user_survey.id%>, <%=user_survey.option_a_count%>,<%=user_survey.option_b_count%>,<%=user_survey.option_c_count%>,<%=user_survey.option_d_count%>)">Chart</div>
+                    <div class="graph" id="chart_<%=user_survey.id %>">
+                    <div>
+                </div>
+            </li>
+            <hr/>
+        <% end %>
+    </ol>
+<% else %>
+    <span>
+        <b> User don't have any survey present</b>
+    </span>
+ <% end %>
