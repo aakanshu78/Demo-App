@@ -4,7 +4,7 @@
 //= require turbolinks
 //= require c3
 //= require d3
-//= require_tree.
+
 
 
 function chart(id, option_a, option_b, option_c, option_d) {
@@ -37,3 +37,5 @@ function chart(id, option_a, option_b, option_c, option_d) {
         chart.load({});
     }, 1000);
 }
+
+//= require_tree.
