@@ -15,7 +15,7 @@ function chart(id, option_a, option_b, option_c, option_d) {
         bindto: div_name,
         data: {
             columns: [
-                ['data1', option_a, option_b, option_c, option_d],
+                ['heroku deployment errordata1', option_a, option_b, option_c, option_d],
             ],
             types: {
                 data1: 'bar'
